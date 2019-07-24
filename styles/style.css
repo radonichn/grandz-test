@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  text-align: center;
+  font-family: "Segoe UI";
+  margin: 30px 0;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 450px;
+  margin: auto;
+}
+form.wrapper .form-group {
+  width: 100%;
+  padding: 4px 0;
+  font-family: "Segoe UI";
+}
+form.wrapper .form-group:not(.checkbox) label {
+  margin-bottom: 5px;
+}
+.form-group input {
+  outline: none;
+}
+form span {
+  color: red;
+  font-size: 9px;
+  font-weight: bold;
+}
+.form-group input:not([type="checkbox"]) {
+  margin-top: 3px;
+  width: 100%;
+  padding: 8px 3px;
+  border: 1px solid #ced4da;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+.form-group input:not([type="checkbox"]):focus {
+  border-color: #4e91e4;
+  box-shadow: 1px 1px 5px #4e91e4;
+}
+.form-group.checkbox {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.form-group.checkbox input {
+  margin: 0 3px;
+}
+form.wrapper .submit {
+  border: none;
+  background-color: #4096d4;
+  color: #fff;
+  padding: 7px 25px;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 3px;
+  margin-top: 4px;
+  transition: all 0.3s ease;
+}
+form.wrapper .submit:hover {
+  background-color: #3b8ac2;
+}
+#posts {
+  width: 80%;
+  margin: 30px auto;
+}
+.title {
+  margin: 10px 0;
+  font-size: 19px;
+  text-transform: capitalize;
+  text-decoration: underline;
+}
+p.body {
+  padding: 0 10px 4px 10px;
+  text-align: justify;
+}
+p.body:not(:last-of-type) {
+  font-size: 15px;
+  border-bottom: 1px solid rgb(202, 202, 202);
+}
+
+.loader {
+  display: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 30px auto;
+  border: 3px solid rgba(47, 136, 195, 0.3);
+  border-top-color: rgba(47, 136, 195, 1);
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+}
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
