@@ -8,9 +8,18 @@ h1 {
   margin: 30px 0;
 }
 .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
   align-items: flex-start;
   width: 100%;
   max-width: 450px;
@@ -38,15 +47,24 @@ form span {
   padding: 8px 3px;
   border: 1px solid #ced4da;
   border-radius: 3px;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 .form-group input:not([type="checkbox"]):focus {
   border-color: #4e91e4;
+  -webkit-box-shadow: 1px 1px 5px #4e91e4;
   box-shadow: 1px 1px 5px #4e91e4;
 }
 .form-group.checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 .form-group.checkbox input {
@@ -62,6 +80,8 @@ form.wrapper .submit {
   cursor: pointer;
   border-radius: 3px;
   margin-top: 4px;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 form.wrapper .submit:hover {
@@ -105,5 +125,14 @@ p.body:not(:last-of-type) {
 @-webkit-keyframes spin {
   to {
     -webkit-transform: rotate(360deg);
+  }
+}
+
+@media all and (max-width: 500px) {
+  .wrapper {
+    width: 80%;
+  }
+  .title {
+    text-align: center;
   }
 }

@@ -1,10 +1,13 @@
 document.addEventListener("DOMContentLoaded", function() {
   const validInput = (key, val) => {
     let re = new RegExp(".*");
-    if (key === "name") re = /^[a-zA-Z]+$/;
-    else if (key === "email")
+    if (key === "name") {
+      re = /^[a-zA-Z]+$/;
+    } else if (key === "email") {
       re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    else if (key === "phone") re = /^[0-9]+$/;
+    } else if (key === "phone") {
+      re = /^[0-9]+$/;
+    }
     return re.test(val) ? "" : `${key} is invalid`;
   };
   document.getElementById("form").addEventListener("submit", function(e) {
@@ -22,11 +25,10 @@ document.addEventListener("DOMContentLoaded", function() {
       phone: this.phone.value,
       subscription: this.subscribe.checked
     };
-    if (
-      Object.values(data).every(x =>
-        typeof x === "boolean" ? true : x.length > 0
-      )
-    ) {
+    let checkLength = Object.values(data).every(x =>
+      typeof x === "boolean" ? true : x.length > 0
+    );
+    if (checkLength) {
       error.common = "";
       Object.keys(data).forEach(x => {
         error[x] = validInput(x, data[x]);
